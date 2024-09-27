@@ -1,219 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Merriweather', serif;
 }
 
-body{
-    background: antiquewhite;
+body {
+    background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
-.nav{
-    display:flex;
-    justify-content:flex-start;
-    list-style-type: none;
-    height:60px;
+nav {
+    background-color: #1DB954; /* Spotify green */
+    padding: 10px 15px; /* Reduced padding */
+    display: flex;
     align-items: center;
-    background: #000;
-    color: #fff;
 }
 
-.logo img{
-    width:45px;
-    padding:0 3px;
-    margin:3px;
+.logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
 }
 
-.nav span{
-    font-weight: bold;
-    margin: 3px;
-    font-style: italic;
-    font-size: 17px;
-    cursor: default;
+.nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
 }
 
-.navbar{
-    display:flex;
+.navbar {
+    display: flex;
+    margin-left: auto;
 }
 
-.navbar li{
-    margin:0 0 0 25px;
+.navbar li {
+    margin-left: 15px; /* Reduced margin */
 }
 
-.navbar li a{
+.navbar a {
     text-decoration: none;
-    color: #fff;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em; /* Reduced font size */
 }
 
-.container{
-    background-image: url(./images/pxfuel.jpg);
-    min-height: 75vh;
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    margin: 25px auto;
-    min-width: 75vw;
-    width: 80%;
-    padding: 15px;
-    border-radius: 12px;
+.navbar a:hover {
+    text-decoration: underline;
 }
 
-.song{
-    display: flex; 
-    align-items: center;
-    max-width: 55vw;
-    overflow-wrap: break-word;
-    margin: 15px;
-    border: 1px solid #807b7b;
-    padding: 3px;
-    border-radius:30px;
+.container {
+    max-width: 800px;
+    margin: 40px auto; /* Center the container with margin */
+    padding: 20px;
 }
 
-.song:hover{
-    background:rgb(255,255, 255, 0.2);
-}
-
-.song i{
-    margin: 0 13px 0 15px;
-}
-
-.cur_song{
-    position:relative;
-    height:117px;
-    background: #000;
-    display: flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.icons{
+.songList {
     margin-top: 20px;
 }
 
-.icons i{
-    cursor: pointer;
-    padding: 15px;
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #1DB954; /* Spotify green */
 }
 
-.icons i:hover{
-    background:rgba(116, 110, 110, 0.671);
-    border-radius: 12px;  
-    transition: all 0.2s ease-in;  
-}
-
-.icons i:active{
-    background:rgba(116, 110, 110, 0.422);
-}
-
-#myProgBar{
-    height: 5px;
-    width: 75vw;
-    cursor: pointer;
-}
-
-#myProgBar::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    background:red;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 7px solid #fff;
-    box-shadow: 0 5px 5px rgba(red, green, blue, alpha)
-}
-
-.play_button{
-    padding: 7px;
-}
-
-.play_button:hover{
-    background-color:  #5a5656;
-    border-radius: 50%;
-}
-
-.play_button:active{
-    background-color:  #474444;
-}
-
-.songname{
-    font-size: 15px;
-    padding: 7px;
-}
-
-#duration{
-    position: relative;
-    font-size: 15px;
+.song {
     display: flex;
-    margin-left: auto;
-    margin-right: 20px;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#album{
-    width:40px;
-    height: 45px;
-    border-radius: 50%;
+.song img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
 }
 
-.songInfo{
-    position: absolute;
-    left: 60px; 
-    width: 30%;
-    top: 55px;
+.play_button {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.songname {
+    flex: 1;
+    font-weight: bold;
+}
+
+#duration {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.cur_song {
     display: flex;
-    justify-content: center;    
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#myProgBar {
+    width: 70%;
+}
+
+.songInfo {
+    display: flex;
     align-items: center;
 }
 
-.songInfo img{
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+.songInfo img {
+    width: 75px;
+    margin-right: 15px;
 }
 
-.sname{
-    position: sticky;
-    left: -300px;
-    top: 45px;
-    color: rgb(255, 255, 255);
-    font-size:13px;
-    margin:0px 0 0px 25px;
-}   
+.icons i {
+    margin: 0 10px;
+    cursor: pointer;
+}
 
 
+/* about_page css */
+.about-container {
+    max-width: 800px;
+    margin: 40px auto; /* Added margin for spacing */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-@media screen and (max-width: 500px){
-    #title{
-        font-size:16px;
-    }
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1DB954; /* Spotify green */
+}
 
-    #album{
-        display: none;
-    }
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: #333;
+}
 
-    .songname{
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .songInfo img{
-        display: none;
-    }
-
-    .songInfo {
-        position: relative;
-    }
-
-    .sname{
-        position: absolute;
-        top: -80px;
-        left: -50px;
-    }
-    
-    .time{
-        font-size: 12px;
-    }
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
